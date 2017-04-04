@@ -16,9 +16,15 @@ int main() {
     	assert(request_filename(request) == "");
     	assert(request_language(request, "") == "");
 	
-	//make sure the filename is correct from a request
+	//make sure the local_filename is correct from a request
 	srcml_request request2 = {"", "file", "", ""};
     	assert(request_filename(request2) == "file");
+        assert(request_language(request2, "") == "");
+
+        //make sure the option_filename supersedes everything
+        srcml_request request3 = {"file", "", "", ""};
+    	assert(request_filename(request3) == "file");
+        assert(request_language(request3, "") == "");
     }
 
     return 0;
