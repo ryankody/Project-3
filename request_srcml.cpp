@@ -12,7 +12,7 @@ std::string request_filename(const srcml_request& request) {
 
     // TODO: determine the proper filename from the request
     std::string filename;
-    filename = request.option_filename;
+    filename = request.local_filename;
 
     return filename;
 }
