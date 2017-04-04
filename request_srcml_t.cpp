@@ -17,7 +17,7 @@ int main() {
     	assert(request_language(request, "") == "");
 	
 	//make sure the file name is correct from a request
-	srcml_request request2 = { "file.cpp", "", "", ""};
+	srcml_request request2 = {"file.cpp", "", "", ""};
     	assert(request_filename(request2) == "file.cpp");
     }
 
