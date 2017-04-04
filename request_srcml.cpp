@@ -34,7 +34,10 @@ std::string request_language(const srcml_request& request, const std::string& fi
 
     // TODO: determine the proper filename from the request
     std::string language;
-    //if()
+    if(request.option_language != "")
+    {
+        language = "C++";
+    }
     return language;
 }
 
