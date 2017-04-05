@@ -43,10 +43,9 @@ int main() {
     }
 
     {
-        //
-        srcml_request request4 = {"", "-", "", ""};
-    	assert(request_filename(request4) == "");
-        assert(request_language(request4, "") == "");
+        srcml_request request4 = {"file.cpp", "-", "", "C++"};
+    	assert(request_filename(request4) == "file.cpp");
+        assert(request_language(request4, "") == "C++");
     }
 
     return 0;
