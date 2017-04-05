@@ -37,8 +37,8 @@ int main() {
 
     {
         //make sure that option language works
-        srcml_request request4 = {"", "", "file.cpp", "C++"};
-    	assert(request_filename(request4) == "file.cpp");
+        srcml_request request4 = {"", "", "", "C++"};
+    	assert(request_filename(request4) == "");
         assert(request_language(request4, "") == "C++");
     }
 
