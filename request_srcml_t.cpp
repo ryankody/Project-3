@@ -9,9 +9,9 @@
 
 int main() {
 
-	// all filenames and languages empty
+		// all filenames and languages empty
     {
-	//make sure empty request works
+		//make sure empty request works
     	srcml_request request = { "", "", "", ""};
     	assert(request_filename(request) == "");
     	assert(request_language(request, "") == "");

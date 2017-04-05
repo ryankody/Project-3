@@ -3,7 +3,7 @@
 
   Implementation of request_srcml()
 */
-
+#include <iostream>
 #include "request_srcml.hpp"
 #include "get_language_from_filename.hpp"
 
@@ -48,12 +48,18 @@ std::string request_language(const srcml_request& request, const std::string& fi
 	else if(request.local_filename == "-" && request.option_filename == "" && request.entry_filename == "data")
 	{
 		language = request.option_language;
+		if(language == "")
+		{
+			std::cerr << "Using stdin requires a declared language.";
+		}
 	}
-
-
 	else
 	{
 		language = get_language_from_filename(filename);
+		if(language == "")
+		{
+			std::cerr << "Extention is not supported.";
+		}
 	}
     
     return language;
