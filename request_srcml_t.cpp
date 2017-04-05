@@ -43,10 +43,10 @@ int main() {
     }
 
     {
-		//check that 
-        srcml_request request4 = {"file.cpp", "-", "", "C++"};
-    	assert(request_filename(request4) == "file.cpp");
-        assert(request_language(request4, "") == "C++");
+		//check for valid language from file extension
+        srcml_request request = {"", "file.cpp", "data", ""};
+    	assert(request_filename(request) == "file.cpp");
+        assert(request_language(request, "file.cpp") == "C++");
     }
 
     return 0;
