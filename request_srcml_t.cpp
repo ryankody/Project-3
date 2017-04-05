@@ -49,5 +49,12 @@ int main() {
         assert(request_language(request, "file.cpp") == "C++");
     }
 
+	{
+		//test when local file name is '-'
+        srcml_request request = {"", "-", "data", ""};
+    	assert(request_filename(request) == "");
+        assert(request_language(request, "") == "");
+    }
+
     return 0;
 }

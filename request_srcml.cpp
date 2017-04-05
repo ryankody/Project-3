@@ -38,6 +38,10 @@ std::string request_language(const srcml_request& request, const std::string& fi
     {
         language = request.option_language;
     }
+	else
+	{
+		language = get_language_from_filename(filename);
+	}
     
     return language;
 }
